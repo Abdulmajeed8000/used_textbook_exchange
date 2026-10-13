@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الكتب الجامعية المستعملة - الرئيسية</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Internal CSS (مطلوب بالمتطلبات) -->
+    <style>
+        .hero-section {
+            background-color: #f4f7f6;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+        }
+        .highlight-text {
+            color: #d35400;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu & Layering (z-index) -->
+    <header class="navbar">
+        <div class="logo">كتب المستعملة</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="sell.html">إضافة كتاب للبيع</a></li>
+                <li><a href="about.html">عن الموقع</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="signup.html">إنشاء حساب</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+
+        <!-- Image with Mapping (ربط جزء من الصورة بصفحة About) -->
+        <!-- Real Photographic Banner with Image Mapping -->
+<section class="banner-container" style="margin-bottom: 30px; text-align: center;">
+    <img src="images/picpic.svg" alt="منصة تبادل الكتب الجامعية" usemap="#bannermap" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+    
+    <!-- Image Mapping: ربط البطاقة الزجاجية يسار اللافتة بصفحة about.html -->
+    <map name="bannermap">
+        <area shape="rect" coords="50,50,290,350" href="about.html" alt="عن المنصة - About Us" title="انقر للذهاب إلى صفحة عن المنصة">
+    </map>
+</section>
+
+        <!-- Inline CSS Demo & Article -->
+        <article class="hero-section">
+            <h1 style="color: #2c3e50; font-size: 28px;">مرحباً بكم في منصة تبادل الكتب الجامعية</h1>
+            <p>منصة مخصصة لطلاب الجامعة لبيع وشراء الكتب المستعملة بكل سهولة وبدون وسيط.</p>
+            
+            <!-- Internal Linking (الربط داخل نفس الصفحة) -->
+            <a href="#available-books" class="btn-primary">تصفح الكتب المتاحة حالياً ↓</a>
+        </article>
+
+        <!-- List Section -->
+        <section class="features-section">
+            <h2>مميزات المنصة للطلاب:</h2>
+            <ul>
+                <li>توفير المال عند شراء الكتب المستعملة بأسعار رمزية.</li>
+                <li>الاستفادة المالية من الكتب القديمة بعد الانتهاء من المواد.</li>
+                <li>التواصل المباشر مع زميلك في الجامعة عبر البريد أو الجوال.</li>
+            </ul>
+        </section>
+
+        <!-- Table Section (جدول عرض الكتب المطلوبة بالفكرة) -->
+        <section id="available-books" class="table-section">
+            <h2>قائمة الكتب المتاحة للبيع</h2>
+            <p>يمكنك التواصل مع البائع مباشرة عبر الايميل الموضح في الجدول لتنسيق الاستلام:</p>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>اسم الكتاب</th>
+                        <th>رمز المادة</th>
+                        <th>حالة الكتاب</th>
+                        <th>السعر (SAR)</th>
+                        <th>ايميل التواصل</th>
+                        <th>رقم الجوال (اختياري)</th>
+                        <th>ملاحظات (اختياري)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Internet Applications & Web Programming</td>
+                        <td>CPIS-358</td>
+                        <td>ممتاز (كالجديد)</td>
+                        <td>50</td>
+                        <td>s1234@kau.edu.sa</td>
+                        <td>0501234567</td>
+                        <td>يحتوي على تحديد بسيط للشباتر الأولى</td>
+                    </tr>
+                    <tr>
+                        <td>Database Concepts</td>
+                        <td>CPIS-240</td>
+                        <td>جيد جداً</td>
+                        <td>40</td>
+                        <td>s5678@kau.edu.sa</td>
+                        <td>-</td>
+                        <td>بدون كتابات جانبية</td>
+                    </tr>
+                    <tr>
+                        <td>Systems Analysis and Design</td>
+                        <td>CPIS-334</td>
+                        <td>مستعمل</td>
+                        <td>30</td>
+                        <td>s9012@kau.edu.sa</td>
+                        <td>0559876543</td>
+                        <td>تسليم في مبنى حاسبات الطلاب</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 جميع الحقوق محفوظة - مشروع CPIS 358</p>
+    </footer>
+
+</body>
+</html>

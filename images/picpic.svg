@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 400" width="100%" height="auto">
+  <defs>
+    <!-- Dark Gradient Overlay for Realistic Depth -->
+    <linearGradient id="photoOverlay" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#0f172a" stop-opacity="0.80"/>
+      <stop offset="70%" stop-color="#0f172a" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.20"/>
+    </linearGradient>
+
+    <!-- Glassmorphism Badge Gradient -->
+    <linearGradient id="glassBadge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="accentBtn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Real Photographic Background (University Library & Textbooks) -->
+  <image href="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" x="0" y="0" width="1200" height="400" preserveAspectRatio="xMidYMid slice"/>
+
+  <!-- Gradient Overlay over the Photo for Text Readability -->
+  <rect width="1200" height="400" fill="url(#photoOverlay)"/>
+
+  <!-- Subtle Top & Bottom Borders -->
+  <rect x="0" y="0" width="1200" height="5" fill="#10b981"/>
+
+  <!-- ================= LEFT SIDE: IMAGE MAPPING BADGE ================= -->
+  <!-- Target Area Coords: X1=50, Y1=50, X2=290, Y2=350 -->
+  <g filter="url(#shadow)">
+    <!-- Glassmorphism Container -->
+    <rect x="50" y="50" width="240" height="300" rx="16" fill="url(#glassBadge)" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.3"/>
+    <rect x="65" y="65" width="210" height="270" rx="12" fill="#0f172a" fill-opacity="0.6"/>
+
+    <!-- Badge Icon -->
+    <circle cx="170" cy="125" r="28" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2"/>
+    <text x="170" y="133" font-family="'Segoe UI', Tahoma, sans-serif" font-size="22" fill="#10b981" text-anchor="middle">📖</text>
+
+    <!-- Badge Text -->
+    <text x="170" y="185" font-family="'Segoe UI', Tahoma, sans-serif" font-size="22" font-weight="800" fill="#ffffff" text-anchor="middle">عن المنصة</text>
+    <text x="170" y="210" font-family="'Segoe UI', Tahoma, sans-serif" font-size="13" fill="#cbd5e1" text-anchor="middle">About Our Platform</text>
+
+    <line x1="90" y1="230" x2="250" y2="230" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+
+    <!-- Button inside Badge -->
+    <rect x="85" y="250" width="170" height="42" rx="8" fill="url(#accentBtn)"/>
+    <text x="170" y="276" font-family="'Segoe UI', Tahoma, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">تعرف علينا الآن ↖</text>
+  </g>
+
+  <!-- ================= RIGHT SIDE: TEXT & BRANDING ================= -->
+  <g transform="translate(1140, 0)">
+    <!-- Main Title -->
+    <text x="0" y="140" font-family="'Segoe UI', Tahoma, Geneva, sans-serif" font-size="42" font-weight="900" fill="#ffffff" text-anchor="end">منصة تبادل الكتب الجامعية</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="185" font-family="'Segoe UI', Tahoma, Geneva, sans-serif" font-size="20" fill="#e2e8f0" text-anchor="end">سوق الطلاب المباشر لبيع وشراء الكتب المستعملة بكل سهولة</text>
+    <text x="0" y="215" font-family="'Segoe UI', Tahoma, Geneva, sans-serif" font-size="15" fill="#34d399" font-weight="600" text-anchor="end">تواصل مباشر • توفير المال • تسليم يداً بيد في الجامعة</text>
+
+    <!-- Feature Pills -->
+    <g transform="translate(-520, 260)">
+      <rect x="360" y="0" width="160" height="38" rx="19" fill="#0f172a" fill-opacity="0.7" stroke="#334155" stroke-width="1.5"/>
+      <text x="440" y="24" font-family="'Segoe UI', Tahoma, sans-serif" font-size="13" font-weight="700" fill="#fbbf24" text-anchor="middle">🎓 خاص بطلاب KAU</text>
+
+      <rect x="180" y="0" width="160" height="38" rx="19" fill="#0f172a" fill-opacity="0.7" stroke="#334155" stroke-width="1.5"/>
+      <text x="260" y="24" font-family="'Segoe UI', Tahoma, sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle">🤝 بدون أي عمولة</text>
+
+      <rect x="0" y="0" width="160" height="38" rx="19" fill="#0f172a" fill-opacity="0.7" stroke="#334155" stroke-width="1.5"/>
+      <text x="80" y="24" font-family="'Segoe UI', Tahoma, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">⚡ تواصل سريع</text>
+    </g>
+  </g>
+</svg>

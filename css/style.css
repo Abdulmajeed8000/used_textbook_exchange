@@ -19,8 +19,10 @@ body {
     background-color: #2c3e50;
     color: #fff;
     padding: 15px 30px;
-    overflow: hidden; /* keeps the floated logo and menu inside the bar */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+    overflow: hidden;
+    /* keeps the floated logo and menu inside the bar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Shadow */
 }
 
 .logo {
@@ -49,10 +51,12 @@ body {
     color: #ecf0f1;
     text-decoration: none;
     padding: 8px 12px;
-    border-radius: 4px; /* Rounded border */
+    border-radius: 4px;
+    /* Rounded border */
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     background-color: #16a085;
 }
 
@@ -96,7 +100,8 @@ body {
     text-align: right;
 }
 
-.styled-table th, .styled-table td {
+.styled-table th,
+.styled-table td {
     padding: 12px 15px;
     border-bottom: 1px solid #dddddd;
 }
@@ -115,7 +120,8 @@ body {
     margin: 0 auto;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Box shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    /* Box shadow */
 }
 
 .form-group {
@@ -128,7 +134,9 @@ body {
     font-weight: bold;
 }
 
-.form-group input, .form-group select, .form-group textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 95%;
     padding: 10px;
     border: 1px solid #ccc;

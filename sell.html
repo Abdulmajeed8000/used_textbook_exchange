@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,24 +15,30 @@
             text-align: center;
             margin-bottom: 25px;
         }
+
         .form-note {
             text-align: center;
             font-size: 14px;
         }
+
         .choice-group label {
             display: inline;
             font-weight: normal;
             margin-left: 15px;
         }
+
         .choice-group input {
             width: auto;
         }
+
         .form-group textarea {
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
+
         .btn-row {
             text-align: center;
         }
+
         .btn-row input {
             width: auto;
             padding: 10px 30px;
@@ -39,6 +46,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header class="navbar">
@@ -68,13 +76,15 @@
             <span class="layer-label" style="top: -12px;">الإضافة مجانية</span>
             <h2 style="text-align: center;">إضافة كتاب للبيع</h2>
             <p class="form-note">أدخل بيانات كتابك ليظهر في قائمة الكتب المتاحة في الصفحة الرئيسية.</p>
-            <p class="form-note">ليس لديك حساب بائع؟ <a href="signup.html">أنشئ حساباً</a> أو <a href="login.html">سجّل دخولك</a> أولاً.</p>
+            <p class="form-note">ليس لديك حساب بائع؟ <a href="signup.html">أنشئ حساباً</a> أو <a href="login.html">سجّل
+                    دخولك</a> أولاً.</p>
 
             <form action="#" method="post">
 
                 <div class="form-group">
                     <label for="bookTitle">اسم الكتاب <span class="required">*</span></label>
-                    <input type="text" id="bookTitle" name="bookTitle" maxlength="100" required placeholder="مثال: Database Concepts">
+                    <input type="text" id="bookTitle" name="bookTitle" maxlength="100" required
+                        placeholder="مثال: Database Concepts">
                 </div>
 
                 <div class="form-group">
@@ -84,7 +94,8 @@
 
                 <div class="form-group">
                     <label for="courseCode">رمز المادة <span class="required">*</span></label>
-                    <input type="text" id="courseCode" name="courseCode" list="courses" required placeholder="CPIS-358" pattern="[A-Z]{4}-[0-9]{3}">
+                    <input type="text" id="courseCode" name="courseCode" list="courses" required placeholder="CPIS-358"
+                        pattern="[A-Z]{4}-[0-9]{3}">
                     <datalist id="courses">
                         <option value="CPIS-210">
                         <option value="CPIS-220">
@@ -124,12 +135,14 @@
 
                 <div class="form-group">
                     <label for="notes">ملاحظات (اختياري)</label>
-                    <textarea id="notes" name="notes" rows="4" cols="40" placeholder="مثال: يحتوي على تحديد بسيط، أو مكان التسليم المفضل"></textarea>
+                    <textarea id="notes" name="notes" rows="4" cols="40"
+                        placeholder="مثال: يحتوي على تحديد بسيط، أو مكان التسليم المفضل"></textarea>
                 </div>
 
                 <div class="form-group choice-group">
                     <input type="checkbox" id="confirm" name="confirm" value="yes" required>
-                    <label for="confirm">أؤكد أن بيانات الكتاب صحيحة وأن الكتاب ملكي <span class="required">*</span></label>
+                    <label for="confirm">أؤكد أن بيانات الكتاب صحيحة وأن الكتاب ملكي <span
+                            class="required">*</span></label>
                 </div>
 
                 <div class="form-group btn-row">
@@ -142,8 +155,10 @@
     </div>
 
     <footer>
-        <p style="text-align: center; padding: 20px; color: #777; font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة - مشروع CPIS 358</p>
+        <p style="text-align: center; padding: 20px; color: #777; font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة -
+            مشروع CPIS 358</p>
     </footer>
 
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-/* General Styles */
+/* ===== General Styles ===== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -7,54 +7,82 @@ body {
     color: #333;
 }
 
+/* Page content area: 85% wide, but never wider than 1100px, centred */
 .container {
     width: 85%;
+    max-width: 1100px;
     margin: 20px auto;
 }
 
-/* Layering Technique (z-index) & Master Navbar */
+/* ===== Navigation Bar (same on every page) ===== */
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* تجعل القائمة العلوية فوق جميع العناصر عند التمرير */
     background-color: #2c3e50;
     color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 15px 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Shadow Effect */
+    overflow: hidden; /* keeps the floated logo and menu inside the bar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
 }
 
 .logo {
+    float: right;
     font-size: 22px;
     font-weight: bold;
 }
 
+.navbar nav {
+    float: left;
+    margin-top: 6px;
+}
+
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
     margin: 0;
     padding: 0;
+}
+
+
+.nav-links li {
+    display: inline;
+    margin-right: 10px;
 }
 
 .nav-links a {
     color: #ecf0f1;
     text-decoration: none;
     padding: 8px 12px;
-    border-radius: 4px; /* Borders Effect */
-    transition: 0.3s;
+    border-radius: 4px; /* Rounded border */
 }
 
 .nav-links a:hover, .nav-links a.active {
     background-color: #16a085;
 }
 
-/* Table Formatting */
+/* ===== Layering (z-index) ===== */
+/* Put class="layer-box" on a block, then place an element with
+   class="layer-label" inside it: the label sits on top of the content. */
+.layer-box {
+    position: relative;
+}
+
+.layer-back {
+    position: relative;
+    z-index: 1;
+}
+
+.layer-label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    background-color: #16a085;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Table ===== */
 .styled-table {
     width: 100%;
-    border-collapse: collapse;
     margin: 25px 0;
     font-size: 16px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
@@ -73,19 +101,21 @@ body {
     border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+/* General class for every second row of a table */
+.alt-row {
     background-color: #f3f3f3;
 }
 
-/* Forms Styling */
+/* ===== Forms ===== */
+/* Form box: never wider than 600px, centred */
 .form-card {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Box Shadow */
+    background-color: #ffffff;
     max-width: 600px;
+    padding: 30px;
     margin: 0 auto;
     border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Box shadow */
 }
 
 .form-group {
@@ -99,26 +129,29 @@ body {
 }
 
 .form-group input, .form-group select, .form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
+}
+
+/* drop-down lists count their padding inside the width, so they need a little more */
+.form-group select {
+    width: 98.5%;
 }
 
 .required {
     color: red;
 }
 
+/* ===== Buttons (general class: used on links and on form buttons) ===== */
 .btn-primary {
     background-color: #27ae60;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     text-decoration: none;
-    display: inline-block;
 }
 
 .btn-primary:hover {

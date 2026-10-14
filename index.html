@@ -23,7 +23,7 @@
 </head>
 <body>
 
-    <!-- Navigation Menu & Layering (z-index) -->
+    <!-- Navigation Menu -->
     <header class="navbar">
         <div class="logo">كتب المستعملة</div>
         <nav>
@@ -38,18 +38,14 @@
     </header>
 
     <!-- Main Content Area -->
-    <main class="container">
+    <div class="container">
 
-        <!-- Image with Mapping (ربط جزء من الصورة بصفحة About) -->
-        <!-- Real Photographic Banner with Image Mapping -->
-<section class="banner-container" style="margin-bottom: 30px; text-align: center;">
-    <img src="images/picpic.svg" alt="منصة تبادل الكتب الجامعية" usemap="#bannermap" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
-    
-    <!-- Image Mapping: ربط البطاقة الزجاجية يسار اللافتة بصفحة about.html -->
-    <map name="bannermap">
-        <area shape="rect" coords="50,50,290,350" href="about.html" alt="عن المنصة - About Us" title="انقر للذهاب إلى صفحة عن المنصة">
-    </map>
-</section>
+        <!-- Project image linked to the About us page -->
+        <section class="banner-container" style="margin-bottom: 30px; text-align: center;">
+            <a href="about.html">
+                <img src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+            </a>
+        </section>
 
         <!-- Inline CSS Demo & Article -->
         <article class="hero-section">
@@ -97,7 +93,7 @@
                         <td>0501234567</td>
                         <td>يحتوي على تحديد بسيط للشباتر الأولى</td>
                     </tr>
-                    <tr>
+                    <tr class="alt-row">
                         <td>Database Concepts</td>
                         <td>CPIS-240</td>
                         <td>جيد جداً</td>
@@ -119,10 +115,10 @@
             </table>
         </section>
 
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2026 جميع الحقوق محفوظة - مشروع CPIS 358</p>
+        <p style="text-align: center; padding: 20px; color: #777; font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة - مشروع CPIS 358</p>
     </footer>
 
 </body>

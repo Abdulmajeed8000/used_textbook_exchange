@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة كتاب للبيع - منصة تبادل الكتب الجامعية</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        .banner {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-note {
+            text-align: center;
+            font-size: 14px;
+        }
+        .choice-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 15px;
+        }
+        .choice-group input {
+            width: auto;
+        }
+        .form-group textarea {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+        .btn-row {
+            text-align: center;
+        }
+        .btn-row input {
+            width: auto;
+            padding: 10px 30px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">كتب المستعملة</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="sell.html" class="active">إضافة كتاب للبيع</a></li>
+                <li><a href="about.html">عن الموقع</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="signup.html">إنشاء حساب</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- Project image linked to the About us page -->
+        <div class="banner">
+            <a href="about.html">
+                <img src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" width="900" height="300">
+            </a>
+        </div>
+
+        <section class="form-card layer-box">
+            <!-- Layering: this label sits on top of the form card (z-index) -->
+            <span class="layer-label" style="top: -12px;">الإضافة مجانية</span>
+            <h2 style="text-align: center;">إضافة كتاب للبيع</h2>
+            <p class="form-note">أدخل بيانات كتابك ليظهر في قائمة الكتب المتاحة في الصفحة الرئيسية.</p>
+            <p class="form-note">ليس لديك حساب بائع؟ <a href="signup.html">أنشئ حساباً</a> أو <a href="login.html">سجّل دخولك</a> أولاً.</p>
+
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <label for="bookTitle">اسم الكتاب <span class="required">*</span></label>
+                    <input type="text" id="bookTitle" name="bookTitle" maxlength="100" required placeholder="مثال: Database Concepts">
+                </div>
+
+                <div class="form-group">
+                    <label for="author">اسم المؤلف</label>
+                    <input type="text" id="author" name="author" maxlength="60" placeholder="مثال: David Kroenke">
+                </div>
+
+                <div class="form-group">
+                    <label for="courseCode">رمز المادة <span class="required">*</span></label>
+                    <input type="text" id="courseCode" name="courseCode" list="courses" required placeholder="CPIS-358" pattern="[A-Z]{4}-[0-9]{3}">
+                    <datalist id="courses">
+                        <option value="CPIS-210">
+                        <option value="CPIS-220">
+                        <option value="CPIS-240">
+                        <option value="CPIS-250">
+                        <option value="CPIS-334">
+                        <option value="CPIS-358">
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="condition">حالة الكتاب <span class="required">*</span></label>
+                    <select id="condition" name="condition" required>
+                        <option value="">-- اختر حالة الكتاب --</option>
+                        <option value="new">جديد</option>
+                        <option value="likeNew">ممتاز (كالجديد)</option>
+                        <option value="veryGood">جيد جداً</option>
+                        <option value="good">جيد</option>
+                        <option value="used">مستعمل</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">السعر (SAR) <span class="required">*</span></label>
+                    <input type="number" id="price" name="price" min="0" max="1000" step="1" required placeholder="50">
+                </div>
+
+                <div class="form-group">
+                    <label for="sellerEmail">بريد التواصل (يظهر للمشترين) <span class="required">*</span></label>
+                    <input type="email" id="sellerEmail" name="sellerEmail" required placeholder="example@kau.edu.sa">
+                </div>
+
+                <div class="form-group">
+                    <label for="sellerPhone">رقم الجوال (اختياري، يظهر للمشترين)</label>
+                    <input type="tel" id="sellerPhone" name="sellerPhone" placeholder="05XXXXXXXX" pattern="05[0-9]{8}">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">ملاحظات (اختياري)</label>
+                    <textarea id="notes" name="notes" rows="4" cols="40" placeholder="مثال: يحتوي على تحديد بسيط، أو مكان التسليم المفضل"></textarea>
+                </div>
+
+                <div class="form-group choice-group">
+                    <input type="checkbox" id="confirm" name="confirm" value="yes" required>
+                    <label for="confirm">أؤكد أن بيانات الكتاب صحيحة وأن الكتاب ملكي <span class="required">*</span></label>
+                </div>
+
+                <div class="form-group btn-row">
+                    <input type="submit" value="إضافة الكتاب" class="btn-primary">
+                    <input type="reset" value="مسح الحقول" class="btn-primary">
+                </div>
+
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p style="text-align: center; padding: 20px; color: #777; font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة - مشروع CPIS 358</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب بائع - منصة تبادل الكتب الجامعية</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        .choice-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 15px;
+        }
+        .choice-group input {
+            width: auto;
+        }
+        .form-note {
+            text-align: center;
+            font-size: 14px;
+        }
+        .banner {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .btn-row {
+            text-align: center;
+        }
+        .btn-row input {
+            width: auto;
+            padding: 10px 30px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">كتب المستعملة</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="sell.html">إضافة كتاب للبيع</a></li>
+                <li><a href="about.html">عن الموقع</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+                <li><a href="signup.html" class="active">إنشاء حساب</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- Project image linked to the About us page -->
+        <div class="banner">
+            <a href="about.html">
+                <img src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" width="900" height="300">
+            </a>
+        </div>
+
+        <section class="form-card layer-box">
+            <!-- Layering: this label sits on top of the form card (z-index) -->
+            <span class="layer-label" style="top: -12px;">للبائعين فقط</span>
+            <h2 style="text-align: center;">إنشاء حساب بائع</h2>
+            <p class="form-note">الحساب مطلوب فقط لمن يريد عرض كتبه للبيع.</p>
+            <p class="form-note">تريد الشراء فقط؟ لا تحتاج إلى حساب، تواصل مع البائع مباشرة من <a href="index.html">قائمة الكتب المتاحة</a>.</p>
+
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <label for="fullName">الاسم الكامل <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" maxlength="50" required placeholder="مثال: محمد أحمد">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني الجامعي (يظهر للمشترين) <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="example@kau.edu.sa">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">كلمة المرور <span class="required">*</span></label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">تأكيد كلمة المرور <span class="required">*</span></label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="major">التخصص <span class="required">*</span></label>
+                    <select id="major" name="major" required>
+                        <option value="">-- اختر التخصص --</option>
+                        <option value="IS">نظم المعلومات</option>
+                        <option value="CS">علوم الحاسبات</option>
+                        <option value="IT">تقنية المعلومات</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </div>
+
+                <div class="form-group choice-group">
+                    <p><strong>المستوى الدراسي:</strong></p>
+                    <input type="radio" id="year1" name="year" value="1" checked>
+                    <label for="year1">الأولى</label>
+                    <input type="radio" id="year2" name="year" value="2">
+                    <label for="year2">الثانية</label>
+                    <input type="radio" id="year3" name="year" value="3">
+                    <label for="year3">الثالثة</label>
+                    <input type="radio" id="year4" name="year" value="4">
+                    <label for="year4">الرابعة</label>
+                    <input type="radio" id="year5" name="year" value="5">
+                    <label for="year5">الخامسة</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم الجوال (اختياري، يظهر للمشترين)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" pattern="05[0-9]{8}">
+                </div>
+
+                <div class="form-group choice-group">
+                    <input type="checkbox" id="agree" name="agree" value="yes" required>
+                    <label for="agree">أوافق على قواعد تبادل الكتب وعلى ظهور بريدي ورقم جوالي للمشترين <span class="required">*</span></label>
+                </div>
+
+                <div class="form-group btn-row">
+                    <input type="submit" value="إنشاء الحساب" class="btn-primary">
+                    <input type="reset" value="مسح الحقول" class="btn-primary">
+                </div>
+
+                <p class="form-note">لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a></p>
+
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p style="text-align: center; padding: 20px; color: #777; font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة - مشروع CPIS 358</p>
+    </footer>
+
+</body>
+</html>

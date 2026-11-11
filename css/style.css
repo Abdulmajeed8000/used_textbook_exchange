@@ -172,3 +172,18 @@ body {
     font-size: 13px;
     margin-top: 4px;
 }
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo img {
+    float: right;
+    margin-left: 10px;
+}
+
+.logo span {
+    float: right;
+    margin-top: 9px;
+}

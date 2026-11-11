@@ -45,6 +45,24 @@
             margin: 0 5px;
         }
     </style>
+    <script src="js/validation.js"></script>
+    <script type="text/javascript">
+        function checkPrice(fieldId, errorId) {
+            var price = parseInt(document.getElementById(fieldId).value);
+
+            if (checkRequired(fieldId, errorId) == false) {
+                return false;
+            } else {
+                if (price < 0 || price > 1000) {
+                    showError(fieldId, errorId, "السعر يجب أن يكون بين 0 و 1000");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+
+    </script>
 </head>
 
 <body>
@@ -84,7 +102,8 @@
                 <div class="form-group">
                     <label for="bookTitle">اسم الكتاب <span class="required">*</span></label>
                     <input type="text" id="bookTitle" name="bookTitle" maxlength="100" required
-                        placeholder="مثال: Database Concepts">
+                        onblur="checkRequired('bookTitle', 'bookTitleError')" placeholder="مثال: Database Concepts">
+                    <span id="bookTitleError" class="error-msg"></span>
                 </div>
 
                 <div class="form-group">
@@ -95,7 +114,7 @@
                 <div class="form-group">
                     <label for="courseCode">رمز المادة <span class="required">*</span></label>
                     <input type="text" id="courseCode" name="courseCode" list="courses" required placeholder="CPIS-358"
-                        pattern="[A-Z]{4}-[0-9]{3}">
+                        onblur="checkRequired('courseCode', 'courseCodeError')" pattern="[A-Z]{4}-[0-9]{3}">
                     <datalist id="courses">
                         <option value="CPIS-210">
                         <option value="CPIS-220">
@@ -104,11 +123,13 @@
                         <option value="CPIS-334">
                         <option value="CPIS-358">
                     </datalist>
+                    <span id="courseCodeError" class="error-msg"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="condition">حالة الكتاب <span class="required">*</span></label>
-                    <select id="condition" name="condition" required>
+                    <select id="condition" name="condition" required
+                        onblur="checkRequired('condition', 'conditionError')">
                         <option value="">-- اختر حالة الكتاب --</option>
                         <option value="new">جديد</option>
                         <option value="likeNew">ممتاز (كالجديد)</option>
@@ -116,16 +137,21 @@
                         <option value="good">جيد</option>
                         <option value="used">مستعمل</option>
                     </select>
+                    <span id="conditionError" class="error-msg"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="price">السعر (SAR) <span class="required">*</span></label>
-                    <input type="number" id="price" name="price" min="0" max="1000" step="1" required placeholder="50">
+                    <input type="number" id="price" name="price" min="0" max="1000" step="1" required placeholder="50"
+                        onblur="checkPrice('price', 'priceError')">
+                    <span id="priceError" class="error-msg"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="sellerEmail">بريد التواصل (يظهر للمشترين) <span class="required">*</span></label>
-                    <input type="email" id="sellerEmail" name="sellerEmail" required placeholder="example@kau.edu.sa">
+                    <input type="email" id="sellerEmail" name="sellerEmail" required placeholder="example@kau.edu.sa"
+                        onblur="checkRequired('sellerEmail', 'sellerEmailError')">
+                    <span id="sellerEmailError" class="error-msg"></span>
                 </div>
 
                 <div class="form-group">

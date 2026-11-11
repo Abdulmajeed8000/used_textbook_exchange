@@ -38,9 +38,30 @@
             font-size: 14px;
         }
     </style>
+    <script type="text/javascript">
+        function showGreeting() {
+            var now = new Date();
+            var hour = now.getHours();
+            var greeting;
+
+            if (hour < 12) {
+                greeting = "صباح الخير";
+            } else if (hour < 18) {
+                greeting = "نهارك سعيد";
+            } else {
+                greeting = "مساء الخير";
+            }
+
+            document.getElementById("greeting").innerHTML =
+                "<section class='about-card'>" +
+                "<h2>" + greeting + "!</h2>" +
+                "<p>مرحباً بك في منصة تبادل الكتب الجامعية.</p>" +
+                "</section>";
+        }
+    </script>
 </head>
 
-<body>
+<body onload="showGreeting()">
 
     <header class="navbar">
         <div class="logo">كتب المستعملة</div>
@@ -65,6 +86,8 @@
         </div>
 
         <h1 style="text-align: center; color: #2c3e50;">عن المنصة</h1>
+
+        <div id="greeting"></div>
 
         <section class="about-card layer-box">
             <!-- Layering: this label sits on top of the section (z-index) -->

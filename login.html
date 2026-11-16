@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول - منصة تبادل الكتب الجامعية</title>
 
-    <!-- External CSS (مربوط بملف التنسيقات الرئيسي) -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Internal CSS (مطلوب ضمن متطلبات الواجب) -->
     <style>
         .login-card {
             max-width: 420px;
@@ -32,11 +30,82 @@
             margin-bottom: 25px;
         }
     </style>
+
+    <script>
+        function highlightBanner() {
+            var bannerImg = document.getElementById("loginBannerImg");
+            var bannerText = document.getElementById("dynamicBannerText");
+            bannerImg.style.border = "3px solid #16a085";
+            bannerImg.style.borderRadius = "10px";
+            bannerText.innerHTML = "أهلاً بك في بوابة طلاب جامعة الملك عبدالعزيز لتبادل الكتب";
+            bannerText.style.color = "#16a085";
+        }
+
+        function resetBanner() {
+            var bannerImg = document.getElementById("loginBannerImg");
+            var bannerText = document.getElementById("dynamicBannerText");
+            bannerImg.style.border = "none";
+            bannerText.innerHTML = "منصة تبادل الكتب الجامعية المستعملة";
+            bannerText.style.color = "#2c3e50";
+        }
+
+        function showEmailHint() {
+            var hint = document.getElementById("emailHint");
+            hint.style.display = "block";
+            hint.innerHTML = "يرجى استخدام بريدك الجامعي الرسمي (مثال: name@kau.edu.sa)";
+        }
+
+        function hideEmailHint() {
+            var hint = document.getElementById("emailHint");
+            hint.style.display = "none";
+        }
+        function validateLoginForm() {
+    var email = document.getElementById("userEmail").value;
+    var password = document.getElementById("userPassword").value;
+    var remember = document.getElementById("rememberMe").checked;
+    var loginMsg = document.getElementById("loginErrorMsg");
+
+    loginMsg.style.display = "block";
+    loginMsg.style.padding = "10px";
+    loginMsg.style.borderRadius = "5px";
+    loginMsg.style.marginBottom = "15px";
+
+    if (email == "" || email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+        loginMsg.style.color = "#b91c1c";
+        loginMsg.style.backgroundColor = "#fee2e2";
+        loginMsg.innerHTML = "خطأ: يرجى إدخال بريد إلكتروني صحيح.";
+        document.getElementById("userEmail").style.borderColor = "red";
+        return false;
+    } else {
+        document.getElementById("userEmail").style.borderColor = "#ccc";
+    }
+
+    if (password == "" || password.length < 6) {
+        loginMsg.style.color = "#b91c1c";
+        loginMsg.style.backgroundColor = "#fee2e2";
+        loginMsg.innerHTML = "خطأ: كلمة المرور يجب أن تكون 6 خانات على الأقل.";
+        document.getElementById("userPassword").style.borderColor = "red";
+        return false;
+    } else {
+        document.getElementById("userPassword").style.borderColor = "#ccc";
+    }
+
+    loginMsg.style.color = "#065f46";
+    loginMsg.style.backgroundColor = "#d1fae5";
+
+    if (remember == true) {
+        loginMsg.innerHTML = "تم تسجيل الدخول بنجاح! سيتم تذكر بياناتك على هذا الجهاز.";
+    } else {
+        loginMsg.innerHTML = "تم تسجيل الدخول بنجاح! مرحباً بك في المنصة.";
+    }
+
+    return false;
+}
+    </script>
 </head>
 
 <body>
 
-    <!-- Navigation Menu -->
     <header class="navbar">
         <div class="logo">
             <a href="about.html">
@@ -55,51 +124,45 @@
         </nav>
     </header>
 
-    <!-- Main Content Area -->
     <div class="container">
 
-        <!-- Project image linked to the About us page -->
         <div class="banner">
             <a href="about.html">
-                <img src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" width="900" height="300">
+                <img id="loginBannerImg" src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" width="900" height="300" onmouseover="highlightBanner()" onmouseout="resetBanner()">
             </a>
+            <p id="dynamicBannerText" style="font-weight: bold; color: #2c3e50; margin-top: 10px;">منصة تبادل الكتب الجامعية المستعملة</p>
         </div>
-
 
         <section class="login-card">
 
-            <!-- Inline CSS Demo -->
             <h2 style="color: #2c3e50; text-align: center; margin-bottom: 8px;">تسجيل الدخول</h2>
             <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 25px;">أدخل بيانات حسابك الجامعي
                 للوصول إلى المنصة</p>
 
-            <!-- Login Form -->
-            <form action="#" method="post">
+            <div id="loginErrorMsg" style="display: none;"></div>
 
-                <!-- البريد الجامعي -->
+            <form action="#" method="post" onsubmit="return validateLoginForm()">
+
                 <div class="form-group">
                     <label for="userEmail">البريد الإلكتروني الجامعي <span class="required">*</span></label>
-                    <input type="email" id="userEmail" name="userEmail" required placeholder="example@kau.edu.sa">
+                    <input type="text" id="userEmail" name="userEmail" placeholder="example@kau.edu.sa" onfocus="showEmailHint()" onblur="hideEmailHint()">
+                    <p id="emailHint" style="display: none; font-size: 12px; color: #0f766e; margin-top: 5px;"></p>
                 </div>
 
-                <!-- كلمة المرور -->
                 <div class="form-group">
                     <label for="userPassword">كلمة المرور <span class="required">*</span></label>
-                    <input type="password" id="userPassword" name="userPassword" required placeholder="••••••••">
+                    <input type="password" id="userPassword" name="userPassword" placeholder="••••••••">
                 </div>
 
-                <!-- خيار تذكرني -->
                 <div class="form-group">
                     <input type="checkbox" id="rememberMe" name="rememberMe" style="width: auto;">
                     <label for="rememberMe" style="display: inline; font-weight: normal; margin: 0;">تذكر بياناتي على
                         هذا الجهاز</label>
                 </div>
 
-                <!-- زر تسجيل الدخول -->
                 <button type="submit" class="btn-primary"
                     style="width: 100%; margin-top: 10px; padding: 12px;">دخول</button>
 
-                <!-- رابط الانتقال لصفحة إنشاء حساب -->
                 <div class="form-footer">
                     <p>ليس لديك حساب بعد؟ <a href="signup.html"
                             style="color: #16a085; font-weight: bold; text-decoration: none;">إنشاء حساب جديد</a></p>
@@ -113,6 +176,8 @@
         <p style="text-align: center; padding: 20px; color: #777; font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة -
             مشروع CPIS 358</p>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 

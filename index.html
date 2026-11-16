@@ -22,6 +22,24 @@
             font-weight: bold;
         }
     </style>
+    <script>
+    function highlightBanner() {
+            var bannerImg = document.getElementById("loginBannerImg");
+            var bannerText = document.getElementById("dynamicBannerText");
+            bannerImg.style.border = "3px solid #16a085";
+            bannerImg.style.borderRadius = "10px";
+            bannerText.innerHTML = "أهلاً بك في بوابة طلاب جامعة الملك عبدالعزيز لتبادل الكتب";
+            bannerText.style.color = "#16a085";
+        }
+
+        function resetBanner() {
+            var bannerImg = document.getElementById("loginBannerImg");
+            var bannerText = document.getElementById("dynamicBannerText");
+            bannerImg.style.border = "none";
+            bannerText.innerHTML = "منصة تبادل الكتب الجامعية المستعملة";
+            bannerText.style.color = "#2c3e50";
+        }
+        </script>
 </head>
 
 <body>

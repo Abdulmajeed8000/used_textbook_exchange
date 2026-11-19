@@ -24,17 +24,17 @@
     </style>
     <script>
     function highlightBanner() {
-            var bannerImg = document.getElementById("loginBannerImg");
-            var bannerText = document.getElementById("dynamicBannerText");
+            var bannerImg = document.getElementById("bannerImg");
+            var bannerText = document.getElementById("bannerText");
             bannerImg.style.border = "3px solid #16a085";
-            bannerImg.style.borderRadius = "10px";
+            bannerImg.style.borderRadius = "12px";
             bannerText.innerHTML = "أهلاً بك في بوابة طلاب جامعة الملك عبدالعزيز لتبادل الكتب";
             bannerText.style.color = "#16a085";
         }
 
         function resetBanner() {
-            var bannerImg = document.getElementById("loginBannerImg");
-            var bannerText = document.getElementById("dynamicBannerText");
+            var bannerImg = document.getElementById("bannerImg");
+            var bannerText = document.getElementById("bannerText");
             bannerImg.style.border = "none";
             bannerText.innerHTML = "منصة تبادل الكتب الجامعية المستعملة";
             bannerText.style.color = "#2c3e50";
@@ -69,9 +69,10 @@
         <!-- Project image linked to the About us page -->
         <section class="banner-container" style="margin-bottom: 30px; text-align: center;">
             <a href="about.html">
-                <img src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة"
+                <img src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" id="bannerImg" onmouseover="highlightBanner()" onmouseout="resetBanner()"
                     style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
             </a>
+            <p id="bannerText">منصة تبادل الكتب الجامعية المستعملة</p>
         </section>
 
         <!-- Inline CSS Demo & Article -->

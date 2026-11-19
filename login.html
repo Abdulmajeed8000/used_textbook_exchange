@@ -31,76 +31,33 @@
         }
     </style>
 
+    <script src="js/validation.js"></script>
+
     <script>
-        function highlightBanner() {
-            var bannerImg = document.getElementById("loginBannerImg");
-            var bannerText = document.getElementById("dynamicBannerText");
-            bannerImg.style.border = "3px solid #16a085";
-            bannerImg.style.borderRadius = "10px";
-            bannerText.innerHTML = "أهلاً بك في بوابة طلاب جامعة الملك عبدالعزيز لتبادل الكتب";
-            bannerText.style.color = "#16a085";
-        }
-
-        function resetBanner() {
-            var bannerImg = document.getElementById("loginBannerImg");
-            var bannerText = document.getElementById("dynamicBannerText");
-            bannerImg.style.border = "none";
-            bannerText.innerHTML = "منصة تبادل الكتب الجامعية المستعملة";
-            bannerText.style.color = "#2c3e50";
-        }
-
-        function showEmailHint() {
-            var hint = document.getElementById("emailHint");
-            hint.style.display = "block";
-            hint.innerHTML = "يرجى استخدام بريدك الجامعي الرسمي (مثال: name@kau.edu.sa)";
-        }
-
-        function hideEmailHint() {
-            var hint = document.getElementById("emailHint");
-            hint.style.display = "none";
-        }
         function validateLoginForm() {
-    var email = document.getElementById("userEmail").value;
-    var password = document.getElementById("userPassword").value;
-    var remember = document.getElementById("rememberMe").checked;
-    var loginMsg = document.getElementById("loginErrorMsg");
+            var password = document.getElementById("userPassword").value;
+            var loginMsg = document.getElementById("loginErrorMsg");
 
-    loginMsg.style.display = "block";
-    loginMsg.style.padding = "10px";
-    loginMsg.style.borderRadius = "5px";
-    loginMsg.style.marginBottom = "15px";
+            loginMsg.style.display = "block";
+            loginMsg.style.padding = "10px";
+            loginMsg.style.borderRadius = "5px";
+            loginMsg.style.marginBottom = "15px";
 
-    if (email == "" || email.indexOf("@") == -1 || email.indexOf(".") == -1) {
-        loginMsg.style.color = "#b91c1c";
-        loginMsg.style.backgroundColor = "#fee2e2";
-        loginMsg.innerHTML = "خطأ: يرجى إدخال بريد إلكتروني صحيح.";
-        document.getElementById("userEmail").style.borderColor = "red";
-        return false;
-    } else {
-        document.getElementById("userEmail").style.borderColor = "#ccc";
-    }
+            if (password == "" || password.length < 8) {
+                loginMsg.style.color = "#b91c1c";
+                loginMsg.style.backgroundColor = "#fee2e2";
+                loginMsg.innerHTML = "خطأ: كلمة المرور يجب أن تكون 8 خانات على الأقل.";
+                document.getElementById("userPassword").style.borderColor = "red";
+                return false;
+            } else {
+                document.getElementById("userPassword").style.borderColor = "#ccc";
+            }
 
-    if (password == "" || password.length < 6) {
-        loginMsg.style.color = "#b91c1c";
-        loginMsg.style.backgroundColor = "#fee2e2";
-        loginMsg.innerHTML = "خطأ: كلمة المرور يجب أن تكون 6 خانات على الأقل.";
-        document.getElementById("userPassword").style.borderColor = "red";
-        return false;
-    } else {
-        document.getElementById("userPassword").style.borderColor = "#ccc";
-    }
-
-    loginMsg.style.color = "#065f46";
-    loginMsg.style.backgroundColor = "#d1fae5";
-
-    if (remember == true) {
-        loginMsg.innerHTML = "تم تسجيل الدخول بنجاح! سيتم تذكر بياناتك على هذا الجهاز.";
-    } else {
-        loginMsg.innerHTML = "تم تسجيل الدخول بنجاح! مرحباً بك في المنصة.";
-    }
-
-    return false;
-}
+            loginMsg.style.color = "#065f46";
+            loginMsg.style.backgroundColor = "#d1fae5";
+            loginMsg.innerHTML = "تم تسجيل الدخول بنجاح! مرحباً بك.";
+            return false;
+        }
     </script>
 </head>
 
@@ -128,9 +85,8 @@
 
         <div class="banner">
             <a href="about.html">
-                <img id="loginBannerImg" src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" width="900" height="300" onmouseover="highlightBanner()" onmouseout="resetBanner()">
+                <img src="images/banner.jpg" alt="منصة تبادل الكتب الجامعية - عن المنصة" width="900" height="300">
             </a>
-            <p id="dynamicBannerText" style="font-weight: bold; color: #2c3e50; margin-top: 10px;">منصة تبادل الكتب الجامعية المستعملة</p>
         </div>
 
         <section class="login-card">
@@ -145,13 +101,14 @@
 
                 <div class="form-group">
                     <label for="userEmail">البريد الإلكتروني الجامعي <span class="required">*</span></label>
-                    <input type="text" id="userEmail" name="userEmail" placeholder="example@kau.edu.sa" onfocus="showEmailHint()" onblur="hideEmailHint()">
-                    <p id="emailHint" style="display: none; font-size: 12px; color: #0f766e; margin-top: 5px;"></p>
+                    <input type="email" id="userEmail" name="userEmail" placeholder="example@kau.edu.sa" required onblur="checkRequired('userEmail', 'userEmailError')">
+                    <span id="userEmailError" class="error-msg"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="userPassword">كلمة المرور <span class="required">*</span></label>
-                    <input type="password" id="userPassword" name="userPassword" placeholder="••••••••">
+                    <input type="password" id="userPassword" name="userPassword" placeholder="••••••••" onblur="checkRequired('userPassword', 'userPasswordError')">
+                    <span id="userPasswordError" class="error-msg"></span>
                 </div>
 
                 <div class="form-group">
@@ -176,8 +133,6 @@
         <p style="text-align: center; padding: 20px; color: #777; font-size: 14px;">&copy; 2026 جميع الحقوق محفوظة -
             مشروع CPIS 358</p>
     </footer>
-
-    <script src="js/script.js"></script>
 
 </body>
 
